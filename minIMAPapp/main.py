@@ -8,6 +8,7 @@ from numpy import zeros, reshape, asmatrix, array
 import pandas as pd
 import bokeh.layouts as layout
 from functools import partial
+import os
 
 def readPrev(fileName):
     """
@@ -123,8 +124,10 @@ def mcmcUpdate(pDict):
     gui.tabs[2] = edgeTab(edges, names)
     gui.tabs[3] = learnTab(evolve, names)
 
+prev_val = os.getcwd() + '\\minIMAPapp\\graphExample.txt'
+print(prev_val)
 csvInput = wid.TextInput(value = "exampleFile2.csv", title = "CSV Data File:")
-prevInput = wid.TextInput(value = 'graphExample.txt', title = "Previous MCMC Session File:")
+prevInput = wid.TextInput(value = prev_val, title = "Previous MCMC Session File:")
 saveInput = wid.TextInput(value = '', title = "Destination file for saved MCMC data:")
 
 csvButton = wid.Button(label = "Run from CSV", button_type = "success")
@@ -164,7 +167,7 @@ tab0 = wid.Panel(child = layout.row(sp0, layout.column(sp1, instructions), sp10,
 helpDict = {'tab': tab0, 'selected': helpDrop, 'options': helpOptions}
 helpButton.on_click(partial(mcmcHelp, hDict = helpDict))  
 
-evolve, names, edges, _, _ = readPrev('graphExample.txt')   
+evolve, names, edges, _, _ = readPrev(prev_val)   
 
 tab1 = fullTab(edges, names)    
 tab2 = edgeTab(edges, names)
