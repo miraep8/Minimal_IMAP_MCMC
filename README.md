@@ -4,17 +4,12 @@
 Minimal IMAP MCMC is a rapid Bayesian approach to Causal Structure Learning.  It is written in Python. In addition to calling it from the command line users can also use a Graphical User Interface (GUI) to call the program.
 This work was done in collaboration with Tamara Broderick's group and it is based on algorithm developed by Raj Agrawal.  To read more about the algorithm, check out the paper: <https://arxiv.org/pdf/1803.05554.pdf>
 
-In order to use this package, please first download it onto your machine via pip:
-
-```
-pip install minIMAPmcmc
-```
 In addition to coming with the code for the GUI and the functions for the command line, it also comes pre-loaded with some example data which is run upon startup. 
 
 
 ## GUI Guide and Instructions
 
-To launch the GUI call `bokeh serve --show minIMAPapp`.  
+To launch the GUI call `bokeh serve --show minIMAPapp` from the folder containing the folder you downloaded.  
 
 ### Control Tab and Landing Page:
 
@@ -45,6 +40,6 @@ This plot contains all the same information shown in the graph view tab.  There 
 ![alt text][edge_plot] 
 
 [con_tab]: Images/control_tab.PNG "Control Tab for MCMC"
-[graph_plot]: Images/graph_view_plot.PNG "Graph View Plot Example"
+[graph_plot]: Images/graph_view_plot.png "Graph View Plot Example"
 [full_wid]: Images/full_widgets.PNG "Controls for the Graph View Plot"
-[edge_plot]: Images/edge_mat_plot.PMG "Edge Matrix View Example"
+[edge_plot]: Images/edge_mat_plot.png "Edge Matrix View Example"
