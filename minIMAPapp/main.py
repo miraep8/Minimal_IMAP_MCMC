@@ -122,7 +122,7 @@ def mcmcUpdate(pDict):
     
     gui.tabs[1] = fullTab(edges, names)    
     gui.tabs[2] = edgeTab(edges, names)
-    gui.tabs[3] = learnTab(evolve, names)
+    #gui.tabs[3] = learnTab(evolve, names)
 
 prev_val = os.getcwd() + '\\minIMAPapp\\graphExample.txt'
 print(prev_val)
@@ -171,9 +171,9 @@ evolve, names, edges, _, _ = readPrev(prev_val)
 
 tab1 = fullTab(edges, names)    
 tab2 = edgeTab(edges, names)
-tab3 = learnTab(evolve, names)
+#tab3 = learnTab(evolve, names)
     
-imapGUI = wid.Tabs(tabs = [tab0, tab1, tab2, tab3])
+imapGUI = wid.Tabs(tabs = [tab0, tab1, tab2])
 
 passDict = {'gui': imapGUI, 'csv': csvInput, "alpha": alpha, 'burnIn': burnIn, 'numSteps': numSteps,
            'thin': thinning, 'gamma': gamma}
