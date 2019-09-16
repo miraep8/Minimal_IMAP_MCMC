@@ -83,6 +83,12 @@ def edgePackage(edges, names, cutoff):
     return(graphData)
 
 def edgeUpdate(pDict):
+    """
+    When the user updates the plot (by clicking on the button) this method will refresh the edge plot)
+    
+    :param pDict: A dictionary containing all of the relevent information needed for updating - it is 
+        automatically assembled by the code which calls it.  
+    """
     
     tab = pDict['tab']; edges = pDict['edges'].copy(); names = pDict['names'].copy(); valSel = pDict['selected'].value
     cutoff = pDict['cutoff'].value
@@ -101,6 +107,12 @@ def edgeUpdate(pDict):
     tab.child = org
 
 def edgeHelp(hDict):
+    """
+    edgeHelp updates a text box if the user selects one of the FAQ and clicks the help button
+    
+    :param hDict: contains all the parameters (such as which question was selected) that are 
+        needed for updating the FAQ box.
+    """
     
     tab = hDict['tab']; hReq = hDict['selected'].value; opts = hDict['options']
     
@@ -126,6 +138,7 @@ def edgeHelp(hDict):
 def edgeTab(edges, names):
     """
     edgeTab assembles the tab structure for the EdgeMat tab
+    
     :param edges: a matrix with all edge likelihoods learned from minimal IMAP MCMC
     :param names: the names of all nodes learned
     :return tab1: the tab object containing all objects in the edgeMat tab

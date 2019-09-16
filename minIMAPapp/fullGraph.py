@@ -17,6 +17,14 @@ def bezier(start, end, control, steps):
     return [(1-s)**2*start + 2*(1-s)*s*control + s**2*end for s in steps]
 
 def fullPlot(edges, names, cutoff):
+    """
+    fullPlot creates the fully connected and interactive graph plot given the parameters
+    
+    :param edges: contains all edges which are above the cutoff
+    :param names: the names of all of the nodes
+    :param cutoff: the cutoff which was used to assemble this particular plot
+    :return p: the finished and interactive plot
+    """
     
     num = len(names)
     indices = list(range(num))
@@ -79,6 +87,13 @@ def fullPlot(edges, names, cutoff):
     return(p)
 
 def fullUpdate(pDict):
+    """
+    When the user updates the plot (by clicking on the button) this method will refresh the full plot)
+    
+    :param pDict: A dictionary containing all of the relevent information needed for updating - it is 
+        automatically assembled by the code which calls it.  
+    """
+    
     tab = pDict['tab']; edges = pDict['edges']; names = pDict['names']; sel = pDict['selBox'].value
     cutoff = pDict['cutoff'].value
     
@@ -98,7 +113,12 @@ def fullUpdate(pDict):
     tab.child = org 
 
 def fullHelp(hDict):
+    """
+    fullHelp updates a text box if the user selects one of the FAQ and clicks the help button
     
+    :param hDict: contains all the parameters (such as which question was selected) that are 
+        needed for updating the FAQ box.
+    """
     tab = hDict['tab']; hReq = hDict['selected'].value; opts = hDict['options']
     
     if(hReq == opts[0]):
