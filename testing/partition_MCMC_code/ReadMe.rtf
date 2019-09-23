@@ -1,0 +1,24 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 The R files in the main directory run the various MCMC schemes for simulated and real data as follows:\
+\
+\'93simpleexample.R\'94 runs a small example on three nodes where the score is proportional to the number of edges in the DAG\
+\
+\'93smallsimmain.R\'94 runs a simulated example with 5 nodes and the BGe score\
+\
+The plots resulting from running the R files are stored in the corresponding directory with \'93graphs\'94 appended after the identifier.\
+\
+In the \'93runningexamples\'94 directory, knitr code and the output pdf files for both these small examples is given.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \'93BHmain.R\'94 runs an example with the Boston Housing data with 14 nodes and the BGe score.\
+\
+\'93medsimmain.R\'94, \'93largesimmain.R\'94 and \'93largersimmain.R\'94 run larger simulated examples with 14, 18 and 20 nodes respectively.\
+\
+The underlying MCMC codes are stored in the directories \'93edgerevandstructure\'94 and \'93orderandpartition\'94 respectively with the \'93initialisation\'94 and \'93scoring\'94 codes in those directories.\
+\
+To change the scoring for DAGs, the \'93DAGcorescore\'94 function, for example in \'93scoring/numedgescore.R\'94 can be modified to any function of the parent nodes.}
